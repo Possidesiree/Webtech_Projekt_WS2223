@@ -1,2 +1,5 @@
 # Webtech_Projkekt_WS2223
-Implementierung einer Webseite, die Informationen und Bestellfunktionen von afrikanischen Bzw. kamerunischen Kleidungen darstellt.
+Implementierung eines Online-Portals, wo man einen Termin zum Friseur vereinbaren kann.
+Funktionalitäten: - Möglichkeit sich auf der Webseite anzumelden
+-Tag und Uhrzeit auswählen
+-Ist ein Termin schon verbucht, könnte der nicht mehr angezeigt werden...
