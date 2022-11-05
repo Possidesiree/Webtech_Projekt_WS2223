@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Speichern</title>
+</head>
+<body>
+<form action="#" method="post" th:action="@{/personForm}" th:object="${person}">
+    <label for="name">Name:</label><br>
+    <input id="name" name="name" th:field="${person.name}" type="text"><br>
+
+    <label for="adresse">Adresse:</label><br>
+    <input id="adresse" name="adresse" th:field="${person.adresse}" type="text"><br>
+
+    <label for="email">Email:</label><br>
+    <input id="email" name="email" th:field="${person.email}" type="text"><br>
+
+    <label for="rolle">Rolle:</label><br>
+    <input id="rolle" name="rolle" th:field="${person.rolle}" type="text"><br>
+
+    <br>
+    <button type="submit" value="Speichern">Speichern</button>
+</form>
+
+</body>
+</html>
