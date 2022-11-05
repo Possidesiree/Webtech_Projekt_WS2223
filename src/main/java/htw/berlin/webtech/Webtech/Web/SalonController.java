@@ -30,7 +30,7 @@ public class SalonController {
         return "personForm";
     }
 
-    @PostMapping("/personForm")
+    @PostMapping("api/v1/salon/personForm")
     public String personSpeichern(@ModelAttribute Person person, Model model) {
         person = salonService.personSpeichern(person);
         model.addAttribute("person", person);
