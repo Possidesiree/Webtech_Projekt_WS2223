@@ -1,0 +1,14 @@
+name: CI
+on: [ push ]
+jobs:
+  build:
+    runs-on: chrome
+      steps:
+        -uses: actions/checkout@v2
+        -name: Set up JDK 16
+        uses: actions/setup-java@v2
+        with:
+          distribution: "adopt"
+          java-version: 17.0.2
+          name: clean build
+          run: ./gradlew clean build --info --stacktrace
