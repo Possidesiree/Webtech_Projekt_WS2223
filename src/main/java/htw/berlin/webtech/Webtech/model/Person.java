@@ -7,10 +7,15 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Column(name = "id", nullable = false)
     private Long id;
+    //@Column(name = "name", nullable = false)
     private String name;
+    //@Column(name = "adresse", nullable = false)
     private String adresse;
+    // @Column(name = "email", nullable = false)
     private String email;
+    // @Column(name = "rolle", nullable = false)
     @Enumerated(EnumType.STRING)
     private Rolle rolle;
 
