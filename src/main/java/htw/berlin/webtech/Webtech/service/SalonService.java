@@ -5,6 +5,9 @@ import htw.berlin.webtech.Webtech.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class SalonService {
 
@@ -19,4 +22,8 @@ public class SalonService {
         return personRepository.save(person);
     }
 
+    public List<Person> findAll() {
+        List<Person> persons = personRepository.findAll();
+        return new ArrayList<>(persons);
+    }
 }
