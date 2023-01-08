@@ -1,5 +1,7 @@
 package htw.berlin.webtech.Webtech.model;
 
+import htw.berlin.webtech.Webtech.benutzerKonto.BenutzerKonto;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -14,21 +16,11 @@ public class Termin {
     @Enumerated(EnumType.STRING)
     private Leistung leistung;
     @ManyToOne
-    @JoinColumn(name = "mitarbeiter_id")
-    private Person mitarbeiter;
-    @ManyToOne
     @JoinColumn(name = "kunden_id")
-    private Person kunde;
+    private BenutzerKonto kunde;
 
     public Termin() {
         //Dummy Konstruktor
-    }
-
-    public Termin(LocalDateTime buchungszeit, Leistung leistung, Person mitarbeiter, Person kunde) {
-        this.buchungszeit = buchungszeit;
-        this.leistung = leistung;
-        this.mitarbeiter = mitarbeiter;
-        this.kunde = kunde;
     }
 
     public Long getId() {
@@ -51,19 +43,11 @@ public class Termin {
         this.leistung = leistung;
     }
 
-    public Person getMitarbeiter() {
-        return mitarbeiter;
-    }
-
-    public void setMitarbeiter(Person mitarbeiter) {
-        this.mitarbeiter = mitarbeiter;
-    }
-
-    public Person getKunde() {
+    public BenutzerKonto getKunde() {
         return kunde;
     }
 
-    public void setKunde(Person kunde) {
+    public void setKunde(BenutzerKonto kunde) {
         this.kunde = kunde;
     }
 
@@ -73,7 +57,6 @@ public class Termin {
                 "id=" + id +
                 ", buchungszeit=" + buchungszeit +
                 ", leistung=" + leistung +
-                ", mitarbeiter=" + mitarbeiter +
                 ", kunde=" + kunde +
                 '}';
     }
