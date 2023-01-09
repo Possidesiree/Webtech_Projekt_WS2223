@@ -18,12 +18,14 @@ public class Person {
         //Dummy Konstruktor
     }
 
-    public Person(String name, String adresse, String email, Rolle rolle) {
+    public Person(Long id, String name, String adresse, String email, Rolle rolle) {
+        this.id = id;
         this.name = name;
         this.adresse = adresse;
         this.email = email;
         this.rolle = rolle;
     }
+
 
     public Long getId() {
         return id;

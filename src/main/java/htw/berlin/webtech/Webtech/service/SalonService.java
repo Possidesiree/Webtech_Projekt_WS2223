@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SalonService {
@@ -25,5 +26,20 @@ public class SalonService {
     public List<Person> findAll() {
         List<Person> persons = personRepository.findAll();
         return new ArrayList<>(persons);
+    }
+
+    public Optional<Person> findById(Long id) {
+        var personEntity = personRepository.findById(id);
+        return personEntity;
+
+    }
+
+    public boolean deleteById(Long id) {
+        if (!personRepository.existsById(id)) {
+            return false;
+        }
+
+        personRepository.deleteById(id);
+        return true;
     }
 }
