@@ -11,28 +11,23 @@ public class Termin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "buchungs_zeit")
-    private LocalDateTime buchungszeit;
+    @Column(nullable = false, name = "datetime")
+    private LocalDateTime datetime;
     @Enumerated(EnumType.STRING)
     private Leistung leistung;
     @ManyToOne
     @JoinColumn(name = "kunden_id")
     private BenutzerKonto kunde;
+    @Column(name = "reservierungs_nummer")
+    private String reservierungsnummer;
 
     public Termin() {
         //Dummy Konstruktor
+
     }
 
     public Long getId() {
         return id;
-    }
-
-    public LocalDateTime getBuchungszeit() {
-        return buchungszeit;
-    }
-
-    public void setBuchungszeit(LocalDateTime buchungszeit) {
-        this.buchungszeit = buchungszeit;
     }
 
     public Leistung getLeistung() {
@@ -51,12 +46,29 @@ public class Termin {
         this.kunde = kunde;
     }
 
+    public String getReservierungsnummer() {
+        return reservierungsnummer;
+    }
+
+    public void setReservierungsnummer(String reservierungsnummer) {
+        this.reservierungsnummer = reservierungsnummer;
+    }
+
+    public LocalDateTime getDatetime() {
+        return datetime;
+    }
+
+    public void setDatetime(LocalDateTime datetime) {
+        this.datetime = datetime;
+    }
+
     @Override
     public String toString() {
         return "Termin{" +
                 "id=" + id +
-                ", buchungszeit=" + buchungszeit +
+                ", datetime=" + datetime +
                 ", leistung=" + leistung +
+                ", reservierungsnummer=" + reservierungsnummer +
                 ", kunde=" + kunde +
                 '}';
     }
